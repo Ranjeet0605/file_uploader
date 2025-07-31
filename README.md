@@ -29,9 +29,6 @@ terminal powercell
 cd backend
 npm install
 
-PORT=5000
-MONGO_URI=mongodb://localhost:27017/cyberxplore
-RABBITMQ_URL=amqp://localhost
 
 // server start
 nodemon server.js
@@ -53,4 +50,5 @@ npm start
  DB_URL=""
 RABBITMQ_URL=""
 // crate .env file inside the frontend folder 
-REACT_APP_API_URL=
+REACT_APP_API_URL=https://file-uploader-backend-ylr9.onrender.com
+
