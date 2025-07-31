@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios';
+import './Dashboard.css';
 const DashBoard = () => {
     const [files, setFiles] = useState([]);
 
@@ -13,9 +14,9 @@ const DashBoard = () => {
         return () => clearInterval(interval);
     },[])
   return (
-    <div>
+    <div  className='dashboard-container'>
           <h2>Uploaded files</h2>
-          <table>
+          <table className='dashboard-table'>
               <thead>
                   <tr>
                       <th>Filename</th>
@@ -29,8 +30,10 @@ const DashBoard = () => {
                   {files.map((file) => (
                       <tr key={file._id}>
                           <td>{file.filename}</td>
-                          <td>{file.status}</td>
-                          <td>{file.result}</td>
+                          <td className={file.status === 'pending' ? 'status-pending' :
+                              file.result==='infected' ? 'status-infected':'status-clean'
+                          }>{file.status}</td>
+                          <td>{file.result || '---'}</td>
                           <td>{new Date(file.uploadedAt).toLocaleString()}</td>
                           <td>{file.scannedAt ? new Date(file.scannedAt).toLocaleString() : 'N/A'} </td>   
                    </tr>
@@ -41,9 +44,5 @@ const DashBoard = () => {
   )
 }
 
-const getStatusColor = (status) => {
-    if (status === 'pending') return 'orange';
-    if (status === 'scanned') return 'green';
-    return 'grey';
-}
+
 export default DashBoard

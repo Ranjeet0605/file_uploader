@@ -7,7 +7,6 @@ function App() {
   
    return (
      <div>
-       <h1>CyberXplore - secure file Scanner </h1>
        <FileUpload />
        <DashBoard/>
   </div>

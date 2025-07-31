@@ -1,0 +1,40 @@
+.dashboard-container{
+    max-width: 900px;
+    margin:30px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.dashboard-container h2{
+    text-align: center;
+    margin-bottom: 20px;
+    
+}
+.dashboard-table{
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 17px;
+}
+.dashboard-table th,
+.dashboard-table td {
+    padding: 12px 15px;
+    border-bottom: 1px solid hsl(0, 5%, 85%);
+    text-align: left;
+}
+.dashboard-table th{
+    background-color: #e6e6e6da;
+}
+.status-pending {
+    color:rgb(255, 153, 0);
+    font-weight: bold;
+}
+.status-clean {
+    color: green;
+    font-weight: bold;
+}
+.status-infected {
+    color: red;
+    font-weight: bold;
+}
