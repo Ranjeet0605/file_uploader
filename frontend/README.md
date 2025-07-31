@@ -45,3 +45,8 @@ cd frontend
 npm install
 npm start
 "proxy": http://localhost:5000"
+
+### create .env file inside the backend folder
+ PORT=""
+ DB_URL=""
+RABBITMQ_URL=""
