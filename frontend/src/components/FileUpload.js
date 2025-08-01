@@ -16,12 +16,13 @@ const FileUpload = () => {
         formData.append('file', file);
         try {
             setMessage('Uploading...');
-            await axios.post("http://localhost:5000/api/v1/upload", formData);
+            await axios.post(`${process.env.REACT_APP_API_URL}/api/v1/upload`, formData);
             setMessage("Scan in Progress...")
             
             const checkScanStatus = async () => {
                 try {
-                    const res = await axios.get("http://localhost:5000/api/v1/files");
+                    const res = await axios.get(`${process.env.REACT_APP_API_URL}/api/v1/files`);
+
                     const uploadedFile = res.data.find(f => f.filename === file.name);
                     if (uploadedFile && uploadedFile.status === 'scanned') {
                         setMessage(

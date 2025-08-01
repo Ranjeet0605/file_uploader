@@ -5,7 +5,8 @@ const DashBoard = () => {
     const [files, setFiles] = useState([]);
 
     const fetchFiles = async() => {
-        const res = await axios.get("http://localhost:5000/api/v1/files");
+       const res = await axios.get(`${process.env.REACT_APP_API_URL}/api/v1/files`);
+
         setFiles(res.data);
     }
     useEffect(() => {
